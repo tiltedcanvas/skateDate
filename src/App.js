@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
+import firebase from "./firebase";
 import './App.scss';
 
 class App extends Component {
+  // call database
+  componentDidMount() {
+    const dbRef = firebase.database().ref();
+  }
   render (){
     return (
       <div>
@@ -9,7 +14,7 @@ class App extends Component {
           <p>Welcome to</p>
         </div>
         <h1>Skate Date</h1>
-        <div class="flexParent">
+        <div className="flexParent">
           <button className="circle">
             <h2>Add a Date</h2>
           </button>
