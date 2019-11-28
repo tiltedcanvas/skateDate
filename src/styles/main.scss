@@ -1,0 +1,37 @@
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.circle {
+    border-radius: 50%;
+    background: $primaryWhite;
+    color: $skateTeal;
+    height: 250px;
+    width: 250px;
+    border: 3px dotted  $skateRed;
+    -webkit-box-shadow:0px 0px 0px 5px $primaryWhite;
+    -moz-box-shadow:0px 0px 0px 5px $primaryWhite;
+    box-shadow:0px 0px 0px 5px $primaryWhite;
+    margin: 15px;
+    transition: ease all .6s;
+    &:hover {
+        transition: ease all .6s;
+        border: 3px dotted $primaryWhite;
+        background: $skateRed;
+        color: $primaryWhite;
+        -webkit-box-shadow:0px 0px 0px 5px $skateRed;
+        -moz-box-shadow:0px 0px 0px 5px $skateRed;
+        box-shadow:0px 0px 0px 5px $skateRed;
+        animation: spin 2s linear infinite;
+    }
+}
+.flexParent {
+    display: flex;
+    justify-content: center;
+
+}

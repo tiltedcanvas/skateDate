@@ -1,0 +1,23 @@
+.welcomeFlag {
+    width: 150px;
+  height: 100px;
+  margin: 0 auto;
+  padding-top: 15px;
+  position: relative; 
+  background: $skateRed;
+  color: white;
+  letter-spacing: 0.2em;
+  text-align: center;
+  text-transform: uppercase;
+}
+.welcomeFlag:after {
+        content: ' ';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 0;
+        border-bottom: 13px solid $skateGrey;
+        border-left: 75px solid transparent;
+        border-right: 75px solid transparent;
+}

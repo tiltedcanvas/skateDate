@@ -1,0 +1,29 @@
+body {
+    font-size: 125%;
+    background: $skateGrey;
+}
+
+h1, h2, h3, h4, h5, p, ul{
+    margin: 0;
+    font-weight: normal;
+    font-family: $headerFont;
+}
+
+h1 {
+    color: $skateRed;
+    font-size: 4rem;
+    text-align: center;
+    text-shadow:0px 0px 0px $primaryWhite,-1px -1px 0px $primaryWhite,1px -1px 0px $primaryWhite,-1px 1px 0px $primaryWhite,1px 1px 0px $primaryWhite,-5px 5px 0px $skateRed;
+}
+h2 {
+    font-size: 3rem;
+    text-align: center;
+
+}
+
+p {
+    font-family: $baseFont;
+    text-transform: uppercase;
+    letter-spacing: .3rem;
+    text-align: center;
+}
