@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import FindSkate from "./FindSkate.js";
-import AddSkate from "./AddSkate.js";
+
 
 class Options extends Component {
     render() {
@@ -8,12 +7,12 @@ class Options extends Component {
         <div className="flexParent">
             <div className="buttonContainer">
                 <div className="circle">
-                    <a href="#">add a date</a>
+                    <button>add a date</button>
                 </div>
             </div>
             <div className="buttonContainer">
                 <div className="circle">
-                    <a href="#">find a date</a>
+                    <button>find a date</button>
                 </div>
             </div>
         </div>

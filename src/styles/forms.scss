@@ -1,0 +1,40 @@
+form {
+    width: 50%;
+    background: rgba(255,255,255,.90);
+    border-radius: 32px 0 32px 0;
+    height: 100%;
+    margin: 40px auto;
+    text-align: center;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    button {
+        border-radius: 32px 0 32px 0;
+        width: 30%;
+        margin: 15px auto;
+        border: 0;
+        background: $skateRed;
+        padding: 10px;
+        text-transform: uppercase;
+        font-family: $baseFont;
+        color: $primaryWhite;
+        font-weight: bold;
+        transition: ease all .6s ;
+        &:hover, :focus{
+            background: $skateTeal;
+        }
+        
+    }
+    input {
+        width: 80%;
+        padding: 10px;
+        margin: 10px auto;
+        box-shadow: inset 0 0 5px darken($skateTeal, 5%);
+        border: none;
+        height: 40px;
+        color: lighten($skateGrey, 5%);
+        
+    }
+
+}
+

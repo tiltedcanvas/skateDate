@@ -31,7 +31,9 @@
   &:focus {
       animation: none;
   }
-  a {
+  button {
+      border: 0;
+      background: transparent;
       width: 100%;
       font-family: $headerFont;
       font-size: 3rem;
