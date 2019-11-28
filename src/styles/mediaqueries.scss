@@ -1,0 +1,42 @@
+/* 
+---------------------- 
+@media Styles 
+---------------------- 
+*/
+@media (max-width: 940px) {
+    body {
+        border: 1px solid lime;
+    }
+}
+
+@media (max-width: 784px) {
+    body {
+        border: 1px solid cyan;
+    }
+    .buttonContainer {
+        width: 30%;
+    }
+    
+}
+
+@media (max-width: 420px) {
+    body {
+        border: 1px solid yellow;
+    }
+    .buttonContainer {
+        width: 40%;
+        margin: 10px 0;
+    }
+    .flexParent {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    h1 {
+        font-size: 6rem;
+        line-height: 4rem;
+        margin: 20px 0;
+        animation: none;
+        color: $primaryWhite;
+    }
+}
