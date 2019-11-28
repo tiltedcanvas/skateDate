@@ -1,6 +1,16 @@
 body {
     font-size: 125%;
-    background: $skateGrey;
+    background: url(../assets/backgroundImage.png);
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.5);
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
+}
+.pageFlexContainer {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 h1, h2, h3, h4, h5, p, ul{
@@ -11,9 +21,12 @@ h1, h2, h3, h4, h5, p, ul{
 
 h1 {
     color: $skateRed;
-    font-size: 4rem;
+    font-size: 10rem;
     text-align: center;
-    text-shadow:0px 0px 0px $primaryWhite,-1px -1px 0px $primaryWhite,1px -1px 0px $primaryWhite,-1px 1px 0px $primaryWhite,1px 1px 0px $primaryWhite,-5px 5px 0px $skateRed;
+    text-shadow:0px 0px 0px $primaryWhite,-1px -1px 0px $primaryWhite,1px -1px 0px $primaryWhite,-1px 1px 0px $primaryWhite,1px 1px 0px $primaryWhite,0px 0px 10px $primaryWhite;
+    transform: rotate(-10deg);
+    line-height: 8rem;
+    margin: 50px 0;
 }
 h2 {
     font-size: 3rem;
@@ -26,4 +39,5 @@ p {
     text-transform: uppercase;
     letter-spacing: .3rem;
     text-align: center;
+    color: $primaryWhite;
 }

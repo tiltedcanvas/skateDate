@@ -1,23 +1,60 @@
-.welcomeFlag {
-    width: 150px;
-  height: 100px;
-  margin: 0 auto;
-  padding-top: 15px;
-  position: relative; 
-  background: $skateRed;
-  color: white;
-  letter-spacing: 0.2em;
-  text-align: center;
-  text-transform: uppercase;
+.buttonContainer {
+  width: 15%;
+  margin: 0 15px;
 }
-.welcomeFlag:after {
-        content: ' ';
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 0;
-        height: 0;
-        border-bottom: 13px solid $skateGrey;
-        border-left: 75px solid transparent;
-        border-right: 75px solid transparent;
+.circle {
+  border-radius: 50%;
+  text-align: center;
+  background: $skateTeal;
+  color: $primaryWhite;
+  width: 100%;
+  padding-bottom: 100%;
+  overflow: hidden;
+  border: 3px dotted  $primaryWhite;
+  -webkit-box-shadow:0px 0px 0px 5px $skateTeal;
+  -moz-box-shadow:0px 0px 0px 5px $skateTeal;
+  box-shadow:0px 0px 0px 5px $skateTeal;
+  position: relative;
+  transition: ease all 1s;
+  display: flex;
+  align-items: center;
+  &:hover{
+      transition: ease all .6s;
+      border: 3px dotted $primaryWhite;
+      background: $skateRed;
+      color: $primaryWhite;
+      -webkit-box-shadow:0px 0px 0px 5px $skateRed;
+      -moz-box-shadow:0px 0px 0px 5px $skateRed;
+      box-shadow:0px 0px 0px 5px $skateRed;
+      animation: spin 2s linear infinite;
+  }
+  &:focus {
+      animation: none;
+  }
+  a {
+      width: 100%;
+      font-family: $headerFont;
+      font-size: 3rem;
+      position: absolute;
+      left: 50%;
+      bottom: 50%;
+      transform: translate(-50%, 50%);
+      line-height: 2.8rem;
+      text-decoration: none;
+      color: $primaryWhite;
+      transition: ease all 0.6s;
+      &:hover {
+          transition: ease all 1.2s;
+          color: $primaryWhite;
+      }
+  }
+}
+
+@keyframes spin {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
 }

@@ -1,15 +1,18 @@
 // Colours 
-$primaryBlack: #383838; 
+$primaryBlack: #361d51; 
 $primaryWhite: #ffffff;
-$skateRed: #ca0000;
-$skateTeal: #009593;
-$skateGrey: #e5e5e5;
+$skateRed: #ec2c7b;
+$skateTeal: #0c96b3;
+$skateGrey: #f99b4a;
 
 
 
 // Fonts
 $baseFont: freight-sans-pro, sans-serif;
-$headerFont: bello-pro, sans-serif;
+$headerFont: 'Selfie_Black', sans-serif;  
 
-
+@font-face {
+    font-family: 'Selfie_Black';
+    src: local('Selfie_Black'), url(../fonts/Selfie_Black.otf) format('opentype');
+}
 
