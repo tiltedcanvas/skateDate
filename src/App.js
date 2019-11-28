@@ -14,13 +14,17 @@ class App extends Component {
           <p>Welcome to</p>
         </div>
         <h1>Skate Date</h1>
-        <div className="flexParent">
-          <button className="circle">
-            <h2>Add a Date</h2>
-          </button>
-          <button className="circle">
-            <h2>Find a Date</h2>
-          </button>
+        <div class="flexParent">
+          <div className="buttonContainer">
+            <div className="circle">
+            <a href="#">Add a Date</a>
+            </div>
+          </div>
+          <div className="buttonContainer">
+            <div className="circle">
+            <a href="#">Add a Date</a>
+            </div>
+          </div>
         </div>
       </div>
     )
