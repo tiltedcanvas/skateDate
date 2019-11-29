@@ -5,14 +5,25 @@ import Header from './Header.js';
 import Footer from './Footer.js';
 
 class App extends Component {
+    constructor() {
+      super();
+      this.state = {
+        eventList: []
+      }
+    }
   // call database
   componentDidMount() {
     const dbRef = firebase.database().ref();
-  }
+}
+
+
+
   render (){
     return (
-      <div className="pageFlexContainer">
-        <Header />
+      <div>
+        <div className="pageFlexContainer">
+          <Header />
+        </div>
         <Footer />
       </div>
     )

@@ -1,19 +1,35 @@
 import React, { Component } from 'react';
 
 class AddSkate extends Component {
+
+handleChange = (event) => {
+    console.log(event.target.value);
+    console.log(this);
+    // this.setState({
+    //   [event.target.id]:
+    //   event.target.value
+    // })
+}
+handleSubmit = (event) => {
+    event.preventDefault();
+    console.log('submit clicked');
+}
+
+
     render() {
         return (
         <form onSubmit={this.handleSubmit}>
             <h2>Add your event below</h2>
-            <label htmlFor="userName"></label>
-            <input id="userName" placeholder="What's your name?" type="text"></input>
-
+            <label htmlFor="nameOfHost"></label>
+            <input id="nameOfHost" placeholder="What's your name?" type="text" onChange={this.handleChange} ></input>
+            <label htmlFor="dateOfEvent"></label>
+            <input id="dateOfEvent" type="date" name="dateOfEvent" onChange={this.handleChange}></input>
             <label htmlFor="address1OfEvent"></label>
-            <input id="address1OfEvent" placeholder="Address 1" type="text"></input>
+            <input id="address1OfEvent" placeholder="Address 1" type="text" onChange={this.handleChange}></input>
             <label htmlFor="address2OfEvent"></label>
-            <input id="address2OfEvent" placeholder="Address 2" type="text"></input>
+            <input id="address2OfEvent" placeholder="Address 2" type="text" onChange={this.handleChange}></input>
             <label htmlFor="cityOfEvent"></label>
-            <input id="cityOfEvent" placeholder="City" type="text"></input>
+            <input id="cityOfEvent" placeholder="City" type="text" onChange={this.handleChange}></input>
 
             <label htmlFor="provOfEvent"></label>
             <select id="provOfEvent">
@@ -33,13 +49,13 @@ class AddSkate extends Component {
             </select>
 
             <label htmlFor="postalOfEvent"></label>
-            <input id="postalOfEvent" placeholder="Postal/Zipcode" type="text"></input>
+            <input id="postalOfEvent" placeholder="Postal/Zipcode" type="text" onChange={this.handleChange}></input>
 
             <label htmlFor="costOfEvent"></label>
-            <input id="costOfEvent" placeholder="Are there any costs?" type="text"></input>
+            <input id="costOfEvent" placeholder="Are there any costs?" type="text" onChange={this.handleChange}></input>
 
             <label htmlFor="notesOfEvent"></label>
-            <input id="notesOfEvent" placeholder="Any notes?" type="textarea"></input>
+            <input id="notesOfEvent" placeholder="Any notes?" type="textarea" onChange={this.handleChange}></input>
 
             <button type="submit">Add Skate!</button>
         </form>
