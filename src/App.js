@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import firebase from "./firebase";
+import firebase from './firebase';
 import './App.scss';
-import Header from "./Header.js";
+import Header from './Header.js';
+import Footer from './Footer.js';
 
 class App extends Component {
   // call database
@@ -12,6 +13,7 @@ class App extends Component {
     return (
       <div className="pageFlexContainer">
         <Header />
+        <Footer />
       </div>
     )
   }

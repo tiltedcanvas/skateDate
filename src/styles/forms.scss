@@ -2,7 +2,7 @@ form {
     width: 50%;
     background: rgba(255,255,255,.90);
     border-radius: 32px 0 32px 0;
-    height: 100%;
+    height: auto;
     margin: 40px auto;
     text-align: center;
     padding: 25px;
@@ -25,7 +25,8 @@ form {
         }
         
     }
-    input {
+    input, select {
+        border-radius: 5px;
         width: 80%;
         padding: 10px;
         margin: 10px auto;

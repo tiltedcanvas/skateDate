@@ -11,33 +11,28 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding: 25px 0;
 }
 
 h1, h2, h3, h4, h5, p, ul{
     margin: 0;
     font-weight: normal;
+    text-align: center;
     font-family: $headerFont;
 }
 
 h1 {
     color: $skateGrey;
     font-size: 10rem;
-    text-align: center;
-    
     transform: rotate(-10deg);
     line-height: 8rem;
     margin: 50px 0;
     animation: glow 2s ease-in-out infinite alternate;
-    // transition: ease .4s;
-    // &:hover {
-    //     color: $primaryWhite;
-    //     text-shadow: 0px 0px 20px $primaryWhite;
-    // }
 }
 h2 {
     font-size: 3rem;
-    text-align: center;
-
+    text-transform: capitalize;
+    color: $skateRed;
 }
 
 p {

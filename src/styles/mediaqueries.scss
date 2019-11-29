@@ -7,6 +7,12 @@
     body {
         border: 1px solid lime;
     }
+    form {
+        width: 70%;
+        button {
+            width:35%;
+        }
+    }
 }
 
 @media (max-width: 784px) {
@@ -16,7 +22,16 @@
     .buttonContainer {
         width: 30%;
     }
-    
+    form {
+        width: 80%;
+        h2 {
+            width: 60%;
+            margin: 0 auto;
+        }
+        button {
+            width:40%;
+        }
+    }
 }
 
 @media (max-width: 420px) {
