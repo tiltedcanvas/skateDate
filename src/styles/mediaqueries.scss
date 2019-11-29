@@ -54,4 +54,16 @@
         animation: none;
         color: $primaryWhite;
     }
+    form {
+        input, select {
+            width: 95%;
+        }
+        button {
+            width: 80%;
+        }
+        h2 {
+            width: 90%;
+            line-height: 2.4rem;
+        }
+    }
 }

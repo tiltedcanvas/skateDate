@@ -6,7 +6,7 @@ class FindSkate extends Component {
         <form onSubmit={this.handleSubmit}>
             <h2>Search for a skate</h2>
             <label htmlFor="findPostal"></label>
-            <input id="findPostal" placeholder="Province or State" type="text"></input>
+            <input id="findPostal" placeholder="Enter Postal or Zipcode" type="text"></input>
             <button type="submit">Find Skates</button>
         </form>
         );
