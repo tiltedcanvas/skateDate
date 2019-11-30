@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import firebase from './firebase';
+import Thanks from './Thanks.js';
 
 class AddSkate extends Component {
     constructor(){
         super();
         this.state = {
+            thanksPopup: null,
             eventHost: '',
             eventType: '',
             dateOfEvent: '',
@@ -49,8 +51,7 @@ handleChange = (e) => {
     })
 }
 handleSubmit = (e) => {
-    // e.preventDefault();  < turned this off until i can make a thank you page that then refreshes the form
-    console.log('submit clicked');
+    e.preventDefault();  
     const skateToAdd = {
         eventHost: this.state.eventHost,
         eventType: this.state.eventType,
@@ -65,65 +66,71 @@ handleSubmit = (e) => {
     };
     // get ready to push to database
     const dbRef = firebase.database().ref();
-    // if it is empty, don't push
+    // ERROR HANDLING if it is empty, don't push
     if(skateToAdd.eventHost !== '') {
         dbRef.push(skateToAdd)
-        // after submit, set state to be an empty string
-        // this.setState({
-        //     eventHost: '',
-        // })
     }
+    this.setState({
+        thanksPopup: 'showThanks',
+    })
 }
-
+resetForm = (e) => {
+    this.setState ({
+        thanksPopup: null,
+    })
+}
 
     render() {
         return (
-        <form onSubmit={this.handleSubmit}>
-            <h2>Add your event below</h2>
-            <label htmlFor="nameOfHost"></label>
-            <input id="eventHost" placeholder="Who's hosting?" type="text" onChange={this.handleChange} ></input>
+        <div>
+            {this.state.thanksPopup !== 'showThanks' ? 
+                <form id='addSkateForm' onSubmit={this.handleSubmit}>
 
-            <label htmlFor="eventType"></label>
-            <input id="eventType" placeholder="What kind of skate is this?" type="text" onChange={this.handleChange} ></input>
+                <h2>Add your event below</h2>
+                <label htmlFor="nameOfHost"></label>
+                <input id="eventHost" placeholder="Who's hosting?" type="text" onChange={this.handleChange} ></input>
+                <label htmlFor="eventType"></label>
+                <input id="eventType" placeholder="What kind of skate is this?" type="text" onChange={this.handleChange} ></input>
+                <label htmlFor="dateOfEvent"></label>
+                <input id="dateOfEvent" type="date" name="dateOfEvent" onChange={this.handleChange}></input>
+                <label htmlFor="address1OfEvent"></label>
+                <input id="address1OfEvent" placeholder="Address 1" type="text" onChange={this.handleChange}></input>
+                <label htmlFor="address2OfEvent"></label>
+                <input id="address2OfEvent" placeholder="Address 2" type="text" onChange={this.handleChange}></input>
+                <label htmlFor="cityOfEvent"></label>
+                <input id="cityOfEvent" placeholder="City" type="text" onChange={this.handleChange}></input>
+                <label htmlFor="provOfEvent"></label>
+                <select id="provOfEvent" onChange={this.handleChange}>
+                    <option value="">Province or State</option>
+                    <option value="AB">Alberta</option>
+                    <option value="BC">British Columbia</option>
+                    <option value="MB">Manitoba</option>
+                    <option value="NB">New Brunswick</option>
+                    <option value="NL">Newfoundland and Labrador</option>
+                    <option value="NS">Nova Scotia</option>
+                    <option value="ON">Ontario</option>
+                    <option value="PE">Prince Edward Island</option>
+                    <option value="QC">Quebec</option>
+                    <option value="SK">Saskatchewan</option>
+                    <option value="NT">Northwest Territories</option>
+                    <option value="NU">Nunavut</option>
+                    <option value="YT">Yukon</option>
+                </select>
+                <label htmlFor="postalOfEvent"></label>
+                <input id="postalOfEvent" placeholder="Postal/Zipcode" type="text" onChange={this.handleChange}></input>
+                <label htmlFor="costOfEvent"></label>
+                <input id="costOfEvent" placeholder="Are there any costs?" type="text" onChange={this.handleChange}></input>
+                <label htmlFor="notesOfEvent"></label>
+                <input id="notesOfEvent" placeholder="Any notes?" type="textarea" onChange={this.handleChange}></input>
+                <button type="submit">Add Skate!</button>
+            </form>
+            : <Thanks
+            resetForm={this.resetForm}/>
+            }
 
-            <label htmlFor="dateOfEvent"></label>
-            <input id="dateOfEvent" type="date" name="dateOfEvent" onChange={this.handleChange}></input>
-            <label htmlFor="address1OfEvent"></label>
-            <input id="address1OfEvent" placeholder="Address 1" type="text" onChange={this.handleChange}></input>
-            <label htmlFor="address2OfEvent"></label>
-            <input id="address2OfEvent" placeholder="Address 2" type="text" onChange={this.handleChange}></input>
-            <label htmlFor="cityOfEvent"></label>
-            <input id="cityOfEvent" placeholder="City" type="text" onChange={this.handleChange}></input>
-
-            <label htmlFor="provOfEvent"></label>
-            <select id="provOfEvent" onChange={this.handleChange}>
-                <option value="">Province or State</option>
-                <option value="AB">Alberta</option>
-                <option value="BC">British Columbia</option>
-                <option value="MB">Manitoba</option>
-                <option value="NB">New Brunswick</option>
-                <option value="NL">Newfoundland and Labrador</option>
-                <option value="NS">Nova Scotia</option>
-                <option value="ON">Ontario</option>
-                <option value="PE">Prince Edward Island</option>
-                <option value="QC">Quebec</option>
-                <option value="SK">Saskatchewan</option>
-                <option value="NT">Northwest Territories</option>
-                <option value="NU">Nunavut</option>
-                <option value="YT">Yukon</option>
-            </select>
-
-            <label htmlFor="postalOfEvent"></label>
-            <input id="postalOfEvent" placeholder="Postal/Zipcode" type="text" onChange={this.handleChange}></input>
-
-            <label htmlFor="costOfEvent"></label>
-            <input id="costOfEvent" placeholder="Are there any costs?" type="text" onChange={this.handleChange}></input>
-
-            <label htmlFor="notesOfEvent"></label>
-            <input id="notesOfEvent" placeholder="Any notes?" type="textarea" onChange={this.handleChange}></input>
-
-            <button type="submit">Add Skate!</button>
-        </form>
+                {/* {this.state.thanksPopup === 'showThanks' && <Thanks />} */}
+            
+        </div>
         );
     }
 }

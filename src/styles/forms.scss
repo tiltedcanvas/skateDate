@@ -1,7 +1,7 @@
 form {
     width: 50%;
-    background: rgba(255,255,255,.90);
-    border-radius: 32px 0 32px 0;
+    background: $transparentWhite;
+    border-radius: $shape;
     height: auto;
     margin: 40px auto;
     text-align: center;
@@ -9,7 +9,7 @@ form {
     display: flex;
     flex-direction: column;
     button {
-        border-radius: 32px 0 32px 0;
+        border-radius: $shape;
         width: 30%;
         margin: 15px auto;
         border: 0;

@@ -56,6 +56,15 @@
     }
 }
 
+.thanksPopup {
+    background: $transparentWhite; 
+    width: 50%;  
+    height: auto;
+    padding: 50px;  
+    border-radius: $shape;
+    margin: 30px auto;
+}
+
 @keyframes spin {
     from {
         transform: rotate(0deg);
