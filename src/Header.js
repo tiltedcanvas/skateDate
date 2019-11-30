@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import Options from './Options.js';
-import FindSkate from "./FindSkate.js";
-import AddSkate from "./AddSkate.js";
 
 class Header extends Component {
     render() {
@@ -10,12 +7,10 @@ class Header extends Component {
             <header>
                 <div>
                     <p>Welcome to</p>
+                    <h1>Skate Date&nbsp;&nbsp;</h1>
                 </div>
-                <h1>Skate Date&nbsp;&nbsp;</h1>
             </header>
-            <Options />
-            <FindSkate />
-            <AddSkate />
+
         </div>
         
         );
