@@ -21,6 +21,12 @@ h1, h2, h3, h4, h5, p, ul{
     font-family: $headerFont;
 }
 
+p, ul {
+    font-family: $baseFont;
+    list-style: none;
+    padding: 0;
+}
+
 h1 {
     color: $skateGrey;
     font-size: 10rem;
@@ -33,14 +39,6 @@ h2 {
     font-size: 3rem;
     text-transform: capitalize;
     color: $skateRed;
-}
-
-p {
-    font-family: $baseFont;
-    text-transform: uppercase;
-    letter-spacing: .3rem;
-    text-align: center;
-    color: $primaryWhite;
 }
 
 .hidden {

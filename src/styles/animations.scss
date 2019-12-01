@@ -1,0 +1,18 @@
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes glow {
+    from {
+        text-shadow:0px 0px 0px $primaryWhite,-1px -1px 0px $primaryWhite,1px -1px 0px $primaryWhite,-1px 1px 0px $primaryWhite,1px 1px 0px $primaryWhite,0px 0px 10px $primaryWhite;
+    }
+    to {
+        text-shadow:0px 0px 0px $primaryWhite,-1px -1px 0px $primaryWhite,1px -1px 0px $primaryWhite,-1px 1px 0px $primaryWhite,1px 1px 0px $primaryWhite,0px 0px 10px $primaryWhite, 0px 0px 20px $primaryWhite;
+        color: $primaryWhite;
+    }
+}

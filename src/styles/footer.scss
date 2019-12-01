@@ -1,3 +1,10 @@
 footer {
     margin-top: 40px;
+    p {
+        font-family: $baseFont;
+        text-transform: uppercase;
+        letter-spacing: .3rem;
+        text-align: center;
+        color: $primaryWhite;
+    }
 }

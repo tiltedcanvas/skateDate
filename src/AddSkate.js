@@ -43,9 +43,7 @@ const individualSkate = {
         });
     });
 }
-
 handleChange = (e) => {
-    console.log(e.target.id);
     this.setState({
         [e.target.id]: e.target.value,
     })
@@ -88,19 +86,19 @@ resetForm = (e) => {
 
                 <h2>Add your event below</h2>
                 <label htmlFor="nameOfHost"></label>
-                <input id="eventHost" placeholder="Who's hosting?" type="text" onChange={this.handleChange} ></input>
+                <input id="eventHost" placeholder="Who's hosting?" type="text" onChange={this.handleChange} required></input>
                 <label htmlFor="eventType"></label>
-                <input id="eventType" placeholder="What kind of skate is this?" type="text" onChange={this.handleChange} ></input>
+                <input id="eventType" placeholder="What kind of skate is this?" type="text" onChange={this.handleChange} required></input>
                 <label htmlFor="dateOfEvent"></label>
-                <input id="dateOfEvent" type="date" name="dateOfEvent" onChange={this.handleChange}></input>
+                <input id="dateOfEvent" type="date" name="dateOfEvent" onChange={this.handleChange} required></input>
                 <label htmlFor="address1OfEvent"></label>
-                <input id="address1OfEvent" placeholder="Address 1" type="text" onChange={this.handleChange}></input>
+                <input id="address1OfEvent" placeholder="Address 1" type="text" onChange={this.handleChange} required></input>
                 <label htmlFor="address2OfEvent"></label>
                 <input id="address2OfEvent" placeholder="Address 2" type="text" onChange={this.handleChange}></input>
                 <label htmlFor="cityOfEvent"></label>
-                <input id="cityOfEvent" placeholder="City" type="text" onChange={this.handleChange}></input>
+                <input id="cityOfEvent" placeholder="City" type="text" onChange={this.handleChange} required></input>
                 <label htmlFor="provOfEvent"></label>
-                <select id="provOfEvent" onChange={this.handleChange}>
+                <select id="provOfEvent" onChange={this.handleChange} required>
                     <option value="">Province or State</option>
                     <option value="AB">Alberta</option>
                     <option value="BC">British Columbia</option>
@@ -117,18 +115,14 @@ resetForm = (e) => {
                     <option value="YT">Yukon</option>
                 </select>
                 <label htmlFor="postalOfEvent"></label>
-                <input id="postalOfEvent" placeholder="Postal/Zipcode" type="text" onChange={this.handleChange}></input>
+                <input id="postalOfEvent" placeholder="Postal/Zipcode" type="text" onChange={this.handleChange} required></input>
                 <label htmlFor="costOfEvent"></label>
-                <input id="costOfEvent" placeholder="Are there any costs?" type="text" onChange={this.handleChange}></input>
+                <input id="costOfEvent" placeholder="Are there any costs?" type="text" onChange={this.handleChange} required></input>
                 <label htmlFor="notesOfEvent"></label>
-                <input id="notesOfEvent" placeholder="Any notes?" type="textarea" onChange={this.handleChange}></input>
+                <input id="notesOfEvent" placeholder="Any notes?" type="textarea" onChange={this.handleChange} required></input>
                 <button type="submit">Add Skate!</button>
-            </form>
-            : <Thanks
-            resetForm={this.resetForm}/>
+            </form> : <Thanks resetForm={this.resetForm}/>
             }
-
-                {/* {this.state.thanksPopup === 'showThanks' && <Thanks />} */}
             
         </div>
         );

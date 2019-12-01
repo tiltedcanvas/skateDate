@@ -2,74 +2,82 @@
     display: flex;
     justify-content: center;
 }
-.buttonContainer {
-    width: 15%;
-    margin: 0 15px;
-  }
-  .circle {
-    border-radius: 50%;
-    text-align: center;
-    background: $skateTeal;
-    color: $primaryWhite;
-    width: 100%;
-    padding-bottom: 100%;
-    overflow: hidden;
-    border: 3px dotted  $primaryWhite;
-    -webkit-box-shadow:0px 0px 0px 5px $skateTeal;
-    -moz-box-shadow:0px 0px 0px 5px $skateTeal;
-    box-shadow:0px 0px 0px 5px $skateTeal;
-    position: relative;
-    transition: ease all 1s;
+.thanksPopup, .resultsPopup {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    &:hover{
-        transition: ease all .6s;
-        border: 3px dotted $primaryWhite;
-        background: $skateRed;
-        color: $primaryWhite;
-        -webkit-box-shadow:0px 0px 0px 5px $skateRed;
-        -moz-box-shadow:0px 0px 0px 5px $skateRed;
-        box-shadow:0px 0px 0px 5px $skateRed;
-        animation: spin 2s linear infinite;
-    }
-    &:focus {
-        animation: none;
-    }
-    button {
-        border: 0;
-        background: transparent;
-        width: 100%;
-        font-family: $headerFont;
-        font-size: 3rem;
-        position: absolute;
-        left: 50%;
-        bottom: 50%;
-        transform: translate(-50%, 50%);
-        line-height: 2.8rem;
-        text-decoration: none;
-        color: $primaryWhite;
-        transition: ease all 0.6s;
-        &:hover {
-            transition: ease all 1.2s;
-            color: $primaryWhite;
-        }
-    }
-}
-
-.thanksPopup {
+    justify-content: center;
     background: $transparentWhite; 
     width: 50%;  
     height: auto;
     padding: 50px;  
     border-radius: $shape;
     margin: 30px auto;
+    .resetForm {
+        border: 0;
+        border-radius: $shape;
+        background: $skateRed;
+        text-align: center;
+        color: $primaryWhite;
+        text-transform: uppercase;
+        width: auto;
+        padding: 20px;
+        margin: 0 auto;
+        transition: ease all .5s;
+        &:hover {
+            background: $skateTeal;
+        }
+    }
+}
+.resultsPopup {
+    width: 80%;
+}
+.resultsContent {
+    width: 100%;
+    color: $primaryWhite;
+    h4 {
+        font-family: $baseFont;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+}
+.flexList {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: left;
+    li {
+        margin: 15px 0;
+    }
 }
 
-@keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+span.infoTitle {
+    font-weight: bold;
+    text-transform: uppercase;
 }
+    .eachResult {
+        background: $skateTeal;
+        border-radius: $shape;
+    padding: 20px;
+    margin: 40px auto;
+    border-bottom: 1px dotted $skateRed;
+    width: 100%;
+    border: 2px dotted $primaryWhite;
+    box-shadow:0px 0px 0px 5px $skateTeal;
+    button {
+        border-radius: $shape;
+        width: 30%;
+        margin: 15px auto;
+        border: 0;
+        background: $skateRed;
+        padding: 10px;
+        text-transform: uppercase;
+        font-family: $baseFont;
+        color: $primaryWhite;
+        font-weight: bold;
+        transition: ease all .6s ;
+        &:hover, :focus{
+            background: $skateGrey;
+        }
+}
+    }
