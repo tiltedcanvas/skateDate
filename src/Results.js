@@ -9,46 +9,25 @@ class Results extends Component {
         }   
     }
     componentDidMount() {
+        console.log(this.props.cityName);
         const dbRef = firebase.database().ref();
         dbRef.on('value', (response) => {
             const skate = response.val();
             const newSkate = []
-      for(let key in skate){
+
+    for(let key in skate){
         const eachSkate = {
-          skateId: key,
-          skateDetails: skate[key]
+            skateId: key,
+            skateDetails: skate[key]
         }
         newSkate.push(eachSkate)
-      }
-      console.log(newSkate)
-
-      this.setState ({
-          skateList: newSkate
-      })
+        }
+        this.setState ({
+            skateList: newSkate
         })
+    })
         
     }
-
-
-    // getCity = (e, choiceOfCity) => {
-    //     e.preventDefault();
-      
-    //     const originalArray = [...this.state.skateList];
-        
-    //     const skateList = originalArray.filter ( (cityOfSkate) => {
-    //       return eachSkate[choiceOfCity] === true;
-    //     });
-      
-    //     const skateList = skateList.filter( (cityOfEvent) => {
-    //       return skateList.cityOfEvent = '';
-    //     });
-      
-    //     this.setState({
-    //       eachSkate: cityOfSkate
-    //     });
-
-
-   
     render (){
         return (
             <div id='resultsPopup' className='resultsPopup'>
@@ -56,12 +35,22 @@ class Results extends Component {
                 <div className='resultsContent'>
                     <ul>
                         {this.state.skateList.map((skateValue, i) => {
-                            console.log('test');
+                            console.log(this);
                         return (
                             <li key={i} className='eachResult'>
-                            <h4>name</h4>
+                            <h4>{this.state.skateList[i].skateDetails.eventHost}</h4>
                             <ul className='flexList'>
-                                <li><span className='infoTitle'>Type of Skate: </span> Roller derby practice</li>
+                                <li><span className='infoTitle'>Type of Skate: </span>{this.state.skateList[i].skateDetails.eventType}</li>
+                                <li><span className='infoTitle'>Date: </span>{this.state.skateList[i].skateDetails.eventDate}</li>
+                                <li><span className='infoTitle'>Time: </span> </li>
+                                <li><span className='infoTitle'>Address: </span>
+                                {this.state.skateList[i].skateDetails.address1OfEvent}
+                                {this.state.skateList[i].skateDetails.address2OfEvent}
+                                {this.state.skateList[i].skateDetails.cityOfEvent}
+                                {this.state.skateList[i].skateDetails.provOfEvent}
+                                </li>
+                                <li><span className='infoTitle'>Cost: </span> ${this.state.skateList[i].skateDetails.costOfEvent}</li>
+                                <li><span className='infoTitle'>Notes: </span>{this.state.skateList[i].skateDetails.notesOfEvent}</li>
                             </ul>
                             <button>Contact</button>
                             </li>

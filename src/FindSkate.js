@@ -7,6 +7,7 @@ class FindSkate extends Component {
         super();
         this.state = {
             resultsPopup: null,
+            findCity: '',
         }   
     }
 // call database
@@ -16,15 +17,18 @@ const dbRef = firebase.database().ref();
 
 handleChange = (e) => {
     console.log(e.target.value);
-    // this.setState({
-    //     [e.target.id]: e.target.value,
-    // })
+    console.log(e.target.id);
+    this.setState({
+        [e.target.id]: e.target.value,
+
+    })
 }
 handleSubmit = (e) => {
     e.preventDefault();  
     const skateToFind = {
-        cityOfEvent: this.state.cityOfEvent,
+        cityOfEvent: this.state.findCity
     };
+    console.log(skateToFind)
     // get ready to pull to database
     // const dbRef = firebase.database().ref();
     this.setState({
@@ -52,7 +56,9 @@ resetForm = (e) => {
                         <option value="calgary">Calgary</option>
                     </select>
                     <button type="submit">Find Skates</button>
-                </form> : <Results resetForm={this.resetForm}/>
+                </form> : <Results 
+                cityName={this.state.findCity}
+                resetForm={this.resetForm}/>
             }
         </div>
         );

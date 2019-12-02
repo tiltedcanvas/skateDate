@@ -16,8 +16,6 @@ class App extends Component {
     }
   }
   handleClick = (e) => {
-    console.log('add a skate')
-    console.log(e.target.id)
     this.setState({
         currentView: e.target.id
       })
