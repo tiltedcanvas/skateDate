@@ -27,7 +27,7 @@ form {
     }
     input, select {
         border-radius: 5px;
-        width: 80%;
+        width: 100%;
         padding: 10px;
         margin: 10px auto;
         box-shadow: inset 0 0 5px darken($skateTeal, 5%);
@@ -39,3 +39,23 @@ form {
 
 }
 
+.flexForm {
+    display: flex;
+    justify-content: center;
+}
+.setTime {
+    width: 50%;
+    label {
+        color: $skateGrey;
+    }
+}
+
+.postalInput {
+    width: 40%;
+}
+.cityInput {
+    width: 40%;
+}
+.provinceInput {
+    width: 20%;
+}

@@ -22,6 +22,7 @@ class Results extends Component {
         }
         newSkate.push(eachSkate)
         }
+    
         this.setState ({
             skateList: newSkate
         })
@@ -35,32 +36,46 @@ class Results extends Component {
                 <div className='resultsContent'>
                     <ul>
                         {this.state.skateList.map((skateValue, i) => {
-                            console.log(this);
-                        return (
-                            <li key={i} className='eachResult'>
-                            <h4>{this.state.skateList[i].skateDetails.eventHost}</h4>
-                            <ul className='flexList'>
-                                <li><span className='infoTitle'>Type of Skate: </span>{this.state.skateList[i].skateDetails.eventType}</li>
-                                <li><span className='infoTitle'>Date: </span>{this.state.skateList[i].skateDetails.eventDate}</li>
-                                <li><span className='infoTitle'>Time: </span> </li>
-                                <li><span className='infoTitle'>Address: </span>
-                                {this.state.skateList[i].skateDetails.address1OfEvent}
-                                {this.state.skateList[i].skateDetails.address2OfEvent}
-                                {this.state.skateList[i].skateDetails.cityOfEvent}
-                                {this.state.skateList[i].skateDetails.provOfEvent}
-                                </li>
-                                <li><span className='infoTitle'>Cost: </span> ${this.state.skateList[i].skateDetails.costOfEvent}</li>
-                                <li><span className='infoTitle'>Notes: </span>{this.state.skateList[i].skateDetails.notesOfEvent}</li>
-                            </ul>
-                            <button>Contact</button>
-                            </li>
-                        )
+                            if (this.props.cityName) = (this.state.skateList[i].skateDetails.cityOfEvent) {
+                                return (
+                                    <li key={i} className='eachResult'>
+                                    <h4>{this.state.skateList[i].skateDetails.eventHost}</h4>
+                                    <ul className='flexList'>
+                                        <li><span className='infoTitle'>Type of Skate</span><p>{this.state.skateList[i].skateDetails.eventType}</p></li>
+                                        <li><span className='infoTitle'>Date</span><p>{this.state.skateList[i].skateDetails.eventDate}</p></li>
+                                        <li><span className='infoTitle'>Start Time</span>
+
+                                        <p>{this.state.skateList[i].skateDetails.startTimeOfEvent}</p> </li>
+
+                                        <li><span className='infoTitle'>End Time</span>
+                                        <p>{this.state.skateList[i].skateDetails.endTimeOfEvent}</p>
+                                        </li>
+
+                                        <li><span className='infoTitle'>Address</span>
+                                            <p>{this.state.skateList[i].skateDetails.address1OfEvent}</p>
+                                            <p>{this.state.skateList[i].skateDetails.address2OfEvent}</p>
+                                            <p>{this.state.skateList[i].skateDetails.cityOfEvent}, {this.state.skateList[i].skateDetails.provOfEvent} {this.state.skateList[i].skateDetails.postalOfEvent}</p>
+                                        </li>
+
+                                        <li><span className='infoTitle'>Cost</span> <p>$ {this.state.skateList[i].skateDetails.costOfEvent}</p></li>
+
+                                        <li><span className='infoTitle'>Notes</span><p>{this.state.skateList[i].skateDetails.notesOfEvent}</p></li>
+                                    </ul>
+                                    <button>Contact</button>
+                                    </li>
+                                )
+                            } else {
+                                return (
+                                    <h4>No results found</h4>
+                                    );
+                            }
                         })};
                     </ul>
                 </div>
                 <button onClick={this.props.resetForm} className='resetForm'>Return to Search</button>
             </div>
         )
+        
     }
 }
 export default Results;

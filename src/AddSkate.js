@@ -91,35 +91,64 @@ resetForm = (e) => {
                 <input id="eventType" placeholder="What kind of skate is this?" type="text" onChange={this.handleChange} required></input>
                 <label htmlFor="dateOfEvent"></label>
                 <input id="dateOfEvent" type="date" name="dateOfEvent" onChange={this.handleChange} required></input>
+
+                <div className="flexForm">
+                    <div className="setTime">
+                        <label htmlFor="startTimeOfEvent">Start Time:</label>
+                        <input id="startTimeOfEvent" type="time" name="startTimeOfEvent" onChange={this.handleChange} required></input>
+                    </div>
+    
+                    <div className="setTime">
+                        <label htmlFor="endTimeOfEvent">End Time:</label>
+                        <input id="endTimeOfEvent" type="time" name="endTimeOfEvent" onChange={this.handleChange} required></input>
+                    </div>
+                </div>
+
+
                 <label htmlFor="address1OfEvent"></label>
                 <input id="address1OfEvent" placeholder="Address 1" type="text" onChange={this.handleChange} required></input>
                 <label htmlFor="address2OfEvent"></label>
                 <input id="address2OfEvent" placeholder="Address 2" type="text" onChange={this.handleChange}></input>
-                <label htmlFor="cityOfEvent"></label>
-                <input id="cityOfEvent" placeholder="City" type="text" onChange={this.handleChange} required></input>
-                <label htmlFor="provOfEvent"></label>
-                <select id="provOfEvent" onChange={this.handleChange} required>
-                    <option value="">Province or State</option>
-                    <option value="AB">Alberta</option>
-                    <option value="BC">British Columbia</option>
-                    <option value="MB">Manitoba</option>
-                    <option value="NB">New Brunswick</option>
-                    <option value="NL">Newfoundland and Labrador</option>
-                    <option value="NS">Nova Scotia</option>
-                    <option value="ON">Ontario</option>
-                    <option value="PE">Prince Edward Island</option>
-                    <option value="QC">Quebec</option>
-                    <option value="SK">Saskatchewan</option>
-                    <option value="NT">Northwest Territories</option>
-                    <option value="NU">Nunavut</option>
-                    <option value="YT">Yukon</option>
-                </select>
-                <label htmlFor="postalOfEvent"></label>
-                <input id="postalOfEvent" placeholder="Postal/Zipcode" type="text" onChange={this.handleChange} required></input>
+                
+                <div className="flexForm">
+                    <div className="cityInput">
+                        <label htmlFor="cityOfEvent"></label>
+                        <input id="cityOfEvent" placeholder="City" type="text" onChange={this.handleChange} required></input>
+                    </div>
+
+                    <div className="provinceInput">
+                        <label htmlFor="provOfEvent"></label>
+                        <select id="provOfEvent" onChange={this.handleChange} required>
+                            <option value="">Province</option>
+                            <option value="AB">AB</option>
+                            <option value="BC">BC</option>
+                            <option value="MB">MB</option>
+                            <option value="NB">NB</option>
+                            <option value="NL">NL</option>
+                            <option value="NS">NS</option>
+                            <option value="ON">ON</option>
+                            <option value="PE">PE</option>
+                            <option value="QC">QC</option>
+                            <option value="SK">SK</option>
+                            <option value="NT">NT</option>
+                            <option value="NU">NU</option>
+                            <option value="YT">YT</option>
+                        </select>
+                    </div>
+
+                    <div className="postalInput">
+                        <label htmlFor="postalOfEvent"></label>
+                        <input id="postalOfEvent" placeholder="Postal/Zipcode" type="text" onChange={this.handleChange} required></input>
+                    </div>
+                </div>
+
                 <label htmlFor="costOfEvent"></label>
                 <input id="costOfEvent" placeholder="Are there any costs?" type="text" onChange={this.handleChange} required></input>
                 <label htmlFor="notesOfEvent"></label>
-                <input id="notesOfEvent" placeholder="Any notes?" type="textarea" onChange={this.handleChange} required></input>
+                <input id="notesOfEvent" placeholder="Any description or notes?" type="textarea" onChange={this.handleChange} required></input>
+
+                <label htmlFor="rsvpOfEvent"></label>
+                <input id="rsvpOfEvent" placeholder="Email for RSVPs?" type="text" onChange={this.handleChange} required></input>
                 <button type="submit">Add Skate!</button>
             </form> : <Thanks resetForm={this.resetForm}/>
             }

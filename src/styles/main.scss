@@ -36,16 +36,16 @@
     width: 100%;
     color: $primaryWhite;
     h4 {
-        font-family: $baseFont;
-        text-transform: uppercase;
+        font-family: $headerFont;
+        text-transform: capitalize;
         font-weight: bold;
+        font-size: 3rem;
     }
 }
 .flexList {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    text-align: left;
+    text-align: center;
     li {
         margin: 15px 0;
     }
