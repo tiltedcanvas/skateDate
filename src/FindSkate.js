@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import firebase from './firebase';
 import Results from './Results';
 
 class FindSkate extends Component {
@@ -11,13 +10,11 @@ class FindSkate extends Component {
         }   
     }
 // call database
-componentDidMount() {
-const dbRef = firebase.database().ref();
-}
+// componentDidMount() {
+// const dbRef = firebase.database().ref();
+// }
 
 handleChange = (e) => {
-    console.log(e.target.value);
-    console.log(e.target.id);
     this.setState({
         [e.target.id]: e.target.value,
 

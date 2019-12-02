@@ -148,7 +148,7 @@ resetForm = (e) => {
                 <input id="notesOfEvent" placeholder="Any description or notes?" type="textarea" onChange={this.handleChange} required></input>
 
                 <label htmlFor="rsvpOfEvent"></label>
-                <input id="rsvpOfEvent" placeholder="Email for RSVPs?" type="text" onChange={this.handleChange} required></input>
+                <input id="rsvpOfEvent" placeholder="Email for RSVPs?" type="email" onChange={this.handleChange} required></input>
                 <button type="submit">Add Skate!</button>
             </form> : <Thanks resetForm={this.resetForm}/>
             }

@@ -36,7 +36,7 @@ class Results extends Component {
                 <div className='resultsContent'>
                     <ul>
                         {this.state.skateList.map((skateValue, i) => {
-                            if (this.props.cityName) = (this.state.skateList[i].skateDetails.cityOfEvent) {
+                            if (this.props.cityName === this.state.skateList[i].skateDetails.cityOfEvent)
                                 return (
                                     <li key={i} className='eachResult'>
                                     <h4>{this.state.skateList[i].skateDetails.eventHost}</h4>
@@ -64,11 +64,7 @@ class Results extends Component {
                                     <button>Contact</button>
                                     </li>
                                 )
-                            } else {
-                                return (
-                                    <h4>No results found</h4>
-                                    );
-                            }
+                            
                         })};
                     </ul>
                 </div>
