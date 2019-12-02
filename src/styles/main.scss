@@ -55,16 +55,17 @@ span.infoTitle {
     font-weight: bold;
     text-transform: uppercase;
 }
-    .eachResult {
-        background: $skateTeal;
-        border-radius: $shape;
+.eachResult {
+    background: $skateTeal;
+    border-radius: $shape;
     padding: 20px;
     margin: 40px auto;
     border-bottom: 1px dotted $skateRed;
-    width: 100%;
+    width: 80%;
     border: 2px dotted $primaryWhite;
     box-shadow:0px 0px 0px 5px $skateTeal;
     button {
+        cursor: url('../assets/skateIcon.png'), auto;	
         border-radius: $shape;
         width: 30%;
         margin: 15px auto;
@@ -79,5 +80,5 @@ span.infoTitle {
         &:hover, :focus{
             background: $skateGrey;
         }
-}
     }
+}
