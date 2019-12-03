@@ -70,12 +70,12 @@ span.infoTitle {
     width: 80%;
     border: 2px dotted $primaryWhite;
     box-shadow:0px 0px 0px 5px $skateBlue;
-    button {
-        cursor: url('../assets/skateIcon.png'), auto;	
+    .mailToLink {
+        cursor: url('../assets/skateIcon.png'), auto;
+        text-decoration: none;
         border-radius: $shape;
-        width: 30%;
-        margin: 15px auto;
-        border: 0;
+        display: inline-block;
+        margin: 25px auto;
         background: $skatePink;
         padding: 10px;
         text-transform: uppercase;
@@ -83,7 +83,7 @@ span.infoTitle {
         color: $primaryWhite;
         font-weight: bold;
         transition: ease all .6s ;
-        &:hover, :focus{
+        &:hover, &:focus{
             background: $skateOrange;
         }
     }

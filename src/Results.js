@@ -31,6 +31,7 @@ class Results extends Component {
                 <h2>Skates in your City</h2>
                 <div className='resultsContent'>
                     <ul>
+                        
                         {this.state.skateList.map((skateValue, i) => {
                             if (this.props.cityName === this.state.skateList[i].skateDetails.cityOfEvent)
                                 return (
@@ -56,10 +57,9 @@ class Results extends Component {
 
                                         <li><span className='infoTitle'>Notes</span><p>{this.state.skateList[i].skateDetails.notesOfEvent}</p></li>
                                     </ul>
-                                    <button>Contact</button>
+                                    <a className='mailToLink' href='mailto:{this.state.skateList[i].skateDetails.rsvpOfEvent}?subject=RSVP for your SkateDate'>Contact</a>
                                     </li>
                                 )
-                            
                         })};
                     </ul>
                 </div>
