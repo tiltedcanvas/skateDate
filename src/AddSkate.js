@@ -54,13 +54,17 @@ handleSubmit = (e) => {
         eventHost: this.state.eventHost,
         eventType: this.state.eventType,
         dateOfEvent: this.state.dateOfEvent,
+        startTimeOfEvent: this.state.startTimeOfEvent,
+        endTimeOfEvent: this.state.endTimeOfEvent,
+        arenaName: this.state.arenaName,
         address1OfEvent: this.state.address1OfEvent,
         address2OfEvent: this.state.address2OfEvent,
-        cityOfEvent: this.state.cityOfEvent,
+        cityOfEvent: this.state.cityOfEvent.toLowerCase(),
         provOfEvent: this.state.provOfEvent,
         postalOfEvent: this.state.postalOfEvent,
         costOfEvent: this.state.costOfEvent,
         notesOfEvent: this.state.notesOfEvent,
+        rsvpOfEvent: this.state.rsvpOfEvent.toLowerCase(),
     };
     // get ready to push to database
     const dbRef = firebase.database().ref();
@@ -104,6 +108,8 @@ resetForm = (e) => {
                     </div>
                 </div>
 
+                <label htmlFor="arenaName"></label>
+                <input id="arenaName" placeholder="Name of venue" type="text" onChange={this.handleChange} required></input>
 
                 <label htmlFor="address1OfEvent"></label>
                 <input id="address1OfEvent" placeholder="Address 1" type="text" onChange={this.handleChange} required></input>

@@ -9,7 +9,6 @@ class Results extends Component {
         }   
     }
     componentDidMount() {
-        console.log(this.props.cityName);
         const dbRef = firebase.database().ref();
         dbRef.on('value', (response) => {
             const skate = response.val();
