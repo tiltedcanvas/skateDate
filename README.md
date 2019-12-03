@@ -2,7 +2,7 @@ This project was bootstrapped with Create React App
 
 # Welcome to SkateDate
 
-[Live Demo](http://skatedate.jasminecarbone.tech/){:target="_blank" rel="noopener"}
+[Live Demo](http://skatedate.jasminecarbone.tech/)
 
 ## Description
 An easy-to-use lightweight app that helps people find local skate dates.
@@ -20,6 +20,6 @@ An easy-to-use lightweight app that helps people find local skate dates.
 - [ ] Limit results per page & add pagination
 
 
-### Find me on social
-[Twitter](https://twitter.com/tiltedcanvas/){:target="_blank" rel="noopener"}
-[Instagram](https://www.instagram.com/tiltedcanvas/){:target="_blank" rel="noopener"}
+### Find me
+[Twitter](https://twitter.com/tiltedcanvas/)
+[Instagram](https://www.instagram.com/tiltedcanvas/)
