@@ -55,6 +55,12 @@ span.infoTitle {
     font-weight: bold;
     text-transform: uppercase;
 }
+.addressStyle {
+    text-transform: capitalize;
+}
+.postalStyle {
+    text-transform: uppercase;
+}
 .eachResult {
     background: $skateTeal;
     border-radius: $shape;
