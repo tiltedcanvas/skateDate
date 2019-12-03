@@ -3,6 +3,7 @@ import firebase from './firebase';
 import Thanks from './Thanks.js';
 
 class AddSkate extends Component {
+    // creates initial state of each item to have an empty string
     constructor(){
         super();
         this.state = {
@@ -19,15 +20,15 @@ class AddSkate extends Component {
             notesOfEvent: ''
         }
     }
-// call database
+// calls and mounts database
 componentDidMount() {
     const dbRef = firebase.database().ref();
 // whenever it changes it gets a snapshot 
     dbRef.on("value", (snapshot) => {
     const skate = snapshot.val();
-    //snapshot is weird so we add .val to get the info 
-    //METHOD - create new array to hold information
-  // creating a for in loop to create a mini object inside of each object. We have restructured this to be an object with two keys
+//snapshot is weird so added .val to get the info properly
+//METHOD - create new array to hold information
+// Create a for in loop to create a mini object inside of each object. We have restructured this to be an object with two keys
 const newSkate = []
     for ( let key in skate ) {
 const individualSkate = {
@@ -36,18 +37,20 @@ const individualSkate = {
     }
     newSkate.push(individualSkate)
     }
-    //put the data into a State
-    // take new array of objects and add to key of skateList and state it
+//put the data into a State
+// take new array of objects and add to key of skateList and state it
     this.setState({
         skateList: newSkate
         });
     });
 }
+// Monitor any changes on form
 handleChange = (e) => {
     this.setState({
         [e.target.id]: e.target.value,
     })
 }
+// prevents refresh default of page and sets the state of each item by grabbing the changes monitored in handleChange to prepare to submit to database
 handleSubmit = (e) => {
     e.preventDefault();  
     const skateToAdd = {
@@ -66,22 +69,23 @@ handleSubmit = (e) => {
         notesOfEvent: this.state.notesOfEvent,
         rsvpOfEvent: this.state.rsvpOfEvent.toLowerCase(),
     };
-    // get ready to push to database
+// get ready to push to database
     const dbRef = firebase.database().ref();
-    // ERROR HANDLING if it is empty, don't push
+// ERROR HANDLING if it is empty, don't push
     if(skateToAdd.eventHost !== '') {
         dbRef.push(skateToAdd)
     }
+// Opens up 'thank you' component after submit
     this.setState({
         thanksPopup: 'showThanks',
     })
 }
+// resets form to add more and sets thanks state to null
 resetForm = (e) => {
     this.setState ({
         thanksPopup: null,
     })
 }
-
     render() {
         return (
         <div>

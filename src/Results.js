@@ -8,6 +8,7 @@ class Results extends Component {
             skateList: [],
         }   
     }
+    // calls and mounts database for grabbing data searched for
     componentDidMount() {
         const dbRef = firebase.database().ref();
         dbRef.on('value', (response) => {

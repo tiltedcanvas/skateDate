@@ -9,29 +9,28 @@ class FindSkate extends Component {
             findCity: '',
         }   
     }
-// call database
-// componentDidMount() {
-// const dbRef = firebase.database().ref();
-// }
 
+// Monitors any changes from form
 handleChange = (e) => {
     this.setState({
         [e.target.id]: e.target.value,
 
     })
 }
+//  Prevents default of refreshing page, sets 'skateToFind' to match the city of the event. 
 handleSubmit = (e) => {
     e.preventDefault();  
     const skateToFind = {
         cityOfEvent: this.state.findCity
     };
-    console.log(skateToFind)
-    // get ready to pull to database
-    // const dbRef = firebase.database().ref();
+
+// Sets the state to call in Results
     this.setState({
         resultsPopup: 'showResults',
     })
 }
+
+// resets state of results to null to so they can disappear 
 resetForm = (e) => {
     this.setState ({
         resultsPopup: null,

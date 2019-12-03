@@ -15,6 +15,7 @@ class App extends Component {
         currentView: null
     }
   }
+  // handleClick of button, sets currentView state to either findSkate or addSkate, which then displays the matching Component
   handleClick = (e) => {
     this.setState({
         currentView: e.target.id
