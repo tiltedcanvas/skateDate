@@ -32,12 +32,31 @@
             width:40%;
         }
     }
+    .flexForm {
+        flex-direction: column;
+    }
+    .setTime,
+    .postalInput,
+    .cityInput,
+    .provinceInput {
+        width: 100%;
+    }
 }
 
 @media (max-width: 420px) {
-    // body {
-    //     border: 1px solid yellow;
-    // }
+    .resultsPopup {
+        width: 90%;
+    }
+    .eachResult {
+        background: $skateBlue;
+        border-radius: $shape;
+        padding: 5px;
+        margin: 20px auto;
+        width: 98%;
+        button {
+            width: 80%;
+        }
+    }
     .buttonContainer {
         width: 40%;
         margin: 10px 0;
@@ -47,12 +66,21 @@
         justify-content: center;
         align-items: center;
     }
+    .resultsContent {
+        h4 {
+            font-size: 2rem;
+        }
+    }
     h1 {
         font-size: 6rem;
         line-height: 4rem;
         margin: 20px 0;
         animation: none;
         color: $primaryWhite;
+    }
+    h2 {
+        font-size: 2.5rem;
+        width: 70%;
     }
     form {
         input, select {
@@ -66,4 +94,5 @@
             line-height: 2.4rem;
         }
     }
+
 }

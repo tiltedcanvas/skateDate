@@ -65,8 +65,7 @@ class Results extends Component {
                 </div>
                 <button onClick={this.props.resetForm} className='resetForm'>Return to Search</button>
             </div>
-        )
-        
+        )   
     }
 }
 export default Results;

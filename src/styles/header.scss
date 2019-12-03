@@ -1,3 +1,12 @@
+header {
+  margin-top: 20px;
+  p {
+    text-transform: uppercase;
+    letter-spacing: .4rem;
+    font-weight: bold;
+    color: $primaryWhite;
+  }
+}
 .buttonContainer {
   width: 15%;
   margin: 0 15px;
@@ -5,15 +14,15 @@
 .circle {
   border-radius: 50%;
   text-align: center;
-  background: $skateTeal;
+  background: $skateBlue;
   color: $primaryWhite;
   width: 100%;
   padding-bottom: 100%;
   overflow: hidden;
   border: 3px dotted  $primaryWhite;
-  -webkit-box-shadow:0px 0px 0px 5px $skateTeal;
-  -moz-box-shadow:0px 0px 0px 5px $skateTeal;
-  box-shadow:0px 0px 0px 5px $skateTeal;
+  -webkit-box-shadow:0px 0px 0px 5px $skateBlue;
+  -moz-box-shadow:0px 0px 0px 5px $skateBlue;
+  box-shadow:0px 0px 0px 5px $skateBlue;
   position: relative;
   transition: ease all 1s;
   display: flex;
@@ -21,11 +30,11 @@
   &:hover{
       transition: ease all .6s;
       border: 3px dotted $primaryWhite;
-      background: $skateRed;
+      background: $skatePink;
       color: $primaryWhite;
-      -webkit-box-shadow:0px 0px 0px 5px $skateRed;
-      -moz-box-shadow:0px 0px 0px 5px $skateRed;
-      box-shadow:0px 0px 0px 5px $skateRed;
+      -webkit-box-shadow:0px 0px 0px 5px $skatePink;
+      -moz-box-shadow:0px 0px 0px 5px $skatePink;
+      box-shadow:0px 0px 0px 5px $skatePink;
       animation: spin 2s linear infinite;
   }
   &:focus {
