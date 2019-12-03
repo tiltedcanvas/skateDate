@@ -1,11 +1,16 @@
-This project was bootstrapped with Create React App
-
 # Welcome to SkateDate
 
 [Live Demo](http://skatedate.jasminecarbone.tech/)
 
 ## Description
-An easy-to-use lightweight app that helps people find local skate dates.
+An easy-to-use lightweight app that helps people find local skate dates. 
+
+## Built With
+* React (Bootstrapped with Create React App)
+* HTML
+* SASS
+* Firebase
+
 
 ## To Do
 - [ ] Search by Postal Code & Radius
